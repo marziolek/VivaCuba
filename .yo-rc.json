@@ -1,0 +1,14 @@
+{
+  "generator-chisel": {
+    "config": {
+      "name": "Viva Cuba Dance Studio",
+      "author": "Marcin Ziółek",
+      "projectType": "wp-with-fe",
+      "nameSlug": "viva-cuba-dance-studio",
+      "nameCamel": "Vivacubadancestudio",
+      "features": {
+        "has_jquery": true
+      }
+    }
+  }
+}

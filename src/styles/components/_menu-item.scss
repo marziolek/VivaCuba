@@ -1,0 +1,5 @@
+.menu-item {
+  & + & {
+    margin-left: 1em;
+  }
+}

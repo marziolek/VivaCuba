@@ -1,0 +1,17 @@
+<header class="header-main container clearfix fixed-top">
+  {% include 'components/main-nav.twig' %}
+  <a href="/" rel="home" class="header-main_logo">
+    <img src="{{assetPath('images/logo-viva-cuba.png')}}" alt="Logo Viva Cuba Dance Studio" width="130" height="130">
+  </a>
+</header>
+
+<div class="container">
+  <div class="owl-carousel owl-theme">
+    {% for slide in slider %}
+      <div class="item">
+          {{ slide.image }}
+          {{ slide.link }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

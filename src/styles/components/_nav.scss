@@ -1,0 +1,10 @@
+.nav {
+  justify-content: flex-end;
+
+  &-link {
+    color: $color-dark-grey;
+    &:hover {
+      color: $color-medium-grey;
+    }
+  }
+}

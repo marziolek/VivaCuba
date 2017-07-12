@@ -1,0 +1,20 @@
+{% if main_nav %}
+  <nav class="main-nav">
+    <ul class="nav nav-pills">
+      {% for item in main_nav.get_items %}
+        <li class="{{item.classes | join(' ')}} nav-item">
+          <a href="{{item.get_link}}" class="nav-link{% if item.current %} active{% endif %}">{{item.title}}</a>
+          {% if item.get_children %}
+            <ul class="">
+              {% for subitem in item.get_children %}
+                <li class="{{subitem.classes | join(' ')}}">
+                  <a href="{{subitem.get_link}}" class="nav-link">{{subitem.title}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

@@ -1,0 +1,18 @@
+/* ==========================================================================
+   #HEADER
+   ========================================================================== */
+
+.header {
+  &-main {
+    position: relative;
+    height: 130px;
+    background-color: $color-white;
+    &_logo {
+      position: absolute;
+      left: $utility-spacing * 2;
+      top: 0;
+      border: $utility-spacing solid $color-white;
+      border-radius: 50%;
+    }
+  }
+}
