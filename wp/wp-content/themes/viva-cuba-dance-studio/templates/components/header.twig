@@ -9,8 +9,9 @@
   <div class="owl-carousel owl-theme">
     {% for slide in slider %}
       <div class="item">
-          {{ slide.image }}
-          {{ slide.link }}
+        <a href="{{ slide.link }}">
+          <img src="{{ slide.image }}" class="cover-image">
+        </a>
       </div>
     {% endfor %}
   </div>

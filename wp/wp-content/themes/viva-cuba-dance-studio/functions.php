@@ -1,5 +1,21 @@
 <?php
 
+register_post_type( 'event',
+	array(
+		'labels' => array(
+			'name' 				=> __( 'Wydarzenia' ),
+			'singular_name' 	=> __( 'Wydarzenie' )
+		),
+		'public'				=> true,
+		'has_archive' 			=> true,
+		'rewrite' 			 	=> array('slug' => 'wydarzenia'),
+		'menu_position'       	=> 4,
+		'supports'	            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields' )
+	)
+);
+
+
+
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices',
 		function () {

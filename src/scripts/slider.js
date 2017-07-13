@@ -4,7 +4,9 @@ var slider = function (name) {
   var carousel = $('.owl-carousel');
 
   if (carousel.length) {
-    carousel.owlCarousel()
+    carousel.owlCarousel({
+      items: 1
+    })
   }
 };
 
