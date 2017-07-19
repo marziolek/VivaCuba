@@ -20,7 +20,7 @@ var stylesTask = function (gulp, plugins, config, helpers) {
       .pipe(plugins.browserSync.stream({ match: '**/*.css' }));
   });
 
-  gulp.task('styles-build', ['assets-build', 'lint-css'], function() {
+  gulp.task('styles-build', ['assets-build'], function() {
     return gulp.src(path.join(config.src.base, config.src.stylesMain))
       .pipe(plugins.sourcemaps.init())
       .pipe(plugins.plumber(helpers.onError))

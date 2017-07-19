@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "dev": "gulp",
-    "lint": "gulp lint-js && gulp lint-css",
+    "lint": "",
     "start": "gulp",
     "watch": "gulp"
   },

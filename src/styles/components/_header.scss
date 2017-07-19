@@ -4,8 +4,7 @@
 
 .header {
   &-main {
-    position: relative;
-    height: 130px;
+    height: $header-height;
     background-color: $color-white;
     &_logo {
       position: absolute;

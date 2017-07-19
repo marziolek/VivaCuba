@@ -10,5 +10,12 @@
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
+    &.active {
+      background-color: $color-red
+    }
   }
+}
+
+.nav-pills .nav-link.active, .nav-pills .nav-item.show .nav-link {
+  background-color: $color-red
 }

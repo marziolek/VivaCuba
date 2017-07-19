@@ -1,3 +1,32 @@
 <footer class="container">
-  <p>Copyright &copy; {{"now"|date('Y')}} Viva Cuba Dance Studio</p>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      {% if footer_column_1 %}
+        <p>{{footer_column_1}}</p>
+      {% endif %}
+      {% if footer_column_1_email %}
+        <a href="mailto:{{footer_column_1_email}}">{{footer_column_1_email}}</a>
+      {% endif %}
+      {% if footer_column_1_phone %}
+        <a href="tel:{{footer_column_1_phone}}">{{footer_column_1_phone}}</a>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      {% if footer_column_2_text %}
+        <p>{{footer_column_2_text}}</p>
+      {% endif %}
+      {% if footer_column_2_social_media %}
+        {% for social in footer_column_2_social_media %}
+          <a href="{{social.link}}" class="icon-{{social.icon}}"></a>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      {% if footer_column_3 %}
+        {% for card in footer_column_3 %}
+          <img src="{{card.card}}" class="">
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
 </footer>

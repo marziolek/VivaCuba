@@ -5,7 +5,7 @@
 
 window.jQuery = window.$ = require('jquery');
 
-var owl = require('owl.carousel');
+require('owl.carousel');
 var slider = require('./slider.js');
 
 $(document).ready( function() {
