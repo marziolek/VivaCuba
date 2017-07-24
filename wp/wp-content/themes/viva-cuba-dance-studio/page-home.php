@@ -26,5 +26,6 @@ $argsEvents = array(
 	'order' => 'DESC'
 );
 $context['events'] = Timber::get_posts($argsEvents);
+$context['preview_size'] = 23;
 
 Timber::render( array( 'page-home.twig', 'page.twig' ), $context );

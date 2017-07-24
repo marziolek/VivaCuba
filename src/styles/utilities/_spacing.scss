@@ -11,6 +11,9 @@ $utility-spacing: 1em;
 
 .u-margin-top {
   margin-top: $utility-spacing;
+  &--2 {
+    margin-top: $utility-spacing * 2;
+  }
 }
 
 .u-margin-right {

@@ -1,37 +1,18 @@
 {% extends "layouts/base.twig" %}
 
 {% block content %}
-<div class="row u-margin-top">
-  <div class="col-xs-12 col-sm-6 posts">
+<div class="row u-margin-top--2">
+  <section class="col-xs-12 col-sm-6 posts">
+    <a href="{{ function('get_post_type_archive_link', 'post') }}" class="h1">Aktualności</a>
     {% for post in posts %}
-      <article id="post-{{post.ID}}">
-        <section class="row">
-          <div class="col-sm-4 date">
-            <div>{{ post.date | date('j') }}</div>
-            <div>{{ post.date | date('F') }}</div>
-          </div>
-          <div class="col-sm-8">
-            <a href="{{ post.link }}" class="h2 post-header post-header-link">{{post.title}}</a>
-            <p>{{ post.preview.read_more('Zobacz więcej') }}</p>
-          </div>
-        </section>
-      </article>
+      {% include ['components/tease.twig'] %}
     {% endfor %}
-  </div>
-  <div class="col-xs-12 col-sm-6 posts">
-    {% for event in events %}
-      <article id="post-{{event.ID}}">
-        <section class="row">
-          <div class="col-sm-4">
-            <div class="event-thumbnail" style="background-image: url({{ event.thumbnail }})"></div>
-          </div>
-          <div class="col-sm-8">
-            <a href="{{ event.link }}" class="h2 post-header post-header-link">{{event.title}}</a>
-            <p>{{ event.preview.read_more('Zobacz więcej') }}</p>
-          </div>
-        </section>
-      </article>
+  </section>
+  <section class="col-xs-12 col-sm-6 posts">
+    <a href="{{ function('get_post_type_archive_link', 'event') }}" class="h1">Wydarzenia</a>
+    {% for post in events %}
+      {% include ['components/tease-event.twig'] %}
     {% endfor %}
-  </div>
+  </section>
 </div>
 {% endblock %}

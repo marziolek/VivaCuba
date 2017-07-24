@@ -3,11 +3,11 @@
   Author: Marcin Ziółek
  */
 
-@import 'settings/*';
 @import '../../assets/icomoon/style.css';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import '../../node_modules/owl.carousel/src/scss/owl.carousel.scss';
 @import '../../node_modules/owl.carousel/src/scss/owl.theme.default.scss';
+@import 'settings/*';
 @import 'tools/*';
 @import 'utilities/*';
 @import 'generic/*';

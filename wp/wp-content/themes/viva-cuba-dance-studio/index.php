@@ -18,5 +18,14 @@ $context['posts'] = Timber::get_posts();
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'home.twig' );
-}
+};
+$context['pagination'] = Timber::get_pagination();
+
+
+$context['footer_column_1'] = get_field('footer_column_1', 'options');
+$context['footer_column_1_phone'] = get_field('footer_column_1_phone', 'options');
+$context['footer_column_1_email'] = get_field('footer_column_1_email', 'options');
+$context['footer_column_2_text'] = get_field('footer_column_2_text', 'options');
+$context['footer_column_2_social_media'] = get_field('footer_column_2_social_media', 'options');
+$context['footer_column_3'] = get_field('footer_column_3', 'options');
 Timber::render( $templates, $context );

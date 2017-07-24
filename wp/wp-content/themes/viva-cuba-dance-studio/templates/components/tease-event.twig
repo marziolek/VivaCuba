@@ -1,11 +1,10 @@
 <article id="post-{{post.ID}}" class="post-item">
   {% block content %}
     <div class="row post-item--row">
-      <div class="col-sm-3 date">
-        <div class="date-day">{{ post.post_date | date('j') }}</div>
-        <div class="date-month">{{ post.post_date | date('F') }}</div>
+      <div class="col-sm-4">
+        <a href="{{ post.link }}" class="event-thumbnail" style="background-image: url({{ post.thumbnail }})"></a>
       </div>
-      <div class="col-sm-9">
+      <div class="col-sm-8">
         <a href="{{ post.link }}" class="h3 post-header post-header-link">{{post.title}}</a>
         <p class="post-preview">{{ post.get_preview(preview_size, false, 'Zobacz więcej') }}</p>
       </div>

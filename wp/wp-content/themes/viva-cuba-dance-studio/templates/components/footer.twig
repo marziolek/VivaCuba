@@ -1,31 +1,39 @@
-<footer class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
+<footer class="container footer">
+  <div class="row align-items-center">
+    <div class="col-xs-12 col-sm-4 footer-col">
       {% if footer_column_1 %}
         <p>{{footer_column_1}}</p>
       {% endif %}
       {% if footer_column_1_email %}
-        <a href="mailto:{{footer_column_1_email}}">{{footer_column_1_email}}</a>
+        <div>
+          <a href="mailto:{{footer_column_1_email}}">{{footer_column_1_email}}</a>
+        </div>
       {% endif %}
       {% if footer_column_1_phone %}
-        <a href="tel:{{footer_column_1_phone}}">{{footer_column_1_phone}}</a>
+        <div class="u-margin-top">
+          <a href="tel:{{footer_column_1_phone}}">{{footer_column_1_phone}}</a>
+        </div>
       {% endif %}
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-3 footer-col  footer-col-mid">
       {% if footer_column_2_text %}
         <p>{{footer_column_2_text}}</p>
       {% endif %}
       {% if footer_column_2_social_media %}
         {% for social in footer_column_2_social_media %}
-          <a href="{{social.link}}" class="icon-{{social.icon}}"></a>
+          <a href="{{social.link}}" class="icon-{{social.icon}} footer-icon"></a>
         {% endfor %}
       {% endif %}
     </div>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-5 footer-col">
       {% if footer_column_3 %}
-        {% for card in footer_column_3 %}
-          <img src="{{card.card}}" class="">
-        {% endfor %}
+        <div class="row align-items-center">
+          {% for card in footer_column_3 %}
+            <div class="col">
+              <img src="{{card.card}}" class="" alt="honorowana karta">
+            </div>
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
   </div>

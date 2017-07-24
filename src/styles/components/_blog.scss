@@ -1,0 +1,6 @@
+.blog,
+.archive {
+  > main {
+    padding-top: $global-spacing * 2;
+  }
+}

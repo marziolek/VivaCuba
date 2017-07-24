@@ -1,21 +1,4 @@
 <?php
-
-register_post_type( 'event',
-	array(
-		'labels' => array(
-			'name' 				=> __( 'Wydarzenia' ),
-			'singular_name' 	=> __( 'Wydarzenie' )
-		),
-		'public'				=> true,
-		'has_archive' 			=> true,
-		'rewrite' 			 	=> array('slug' => 'wydarzenia'),
-		'menu_position'       	=> 4,
-		'supports'	            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields' )
-	)
-);
-
-
-
 if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices',
 		function () {
@@ -37,6 +20,16 @@ include get_template_directory() . '/features/ChiselPost.php';
 if ( isset( $_SERVER['HTTP_X_CHISEL_PROXY'] ) ) {
 	define( 'CHISEL_DEV_ENV', true );
 }
+
+function re_rewrite_rules() {
+    global $wp_rewrite;
+    $wp_rewrite->author_base        = 'autor';
+    // $wp_rewrite->search_base        = 'buscar';
+    $wp_rewrite->pagination_base    = 'strona';
+    $wp_rewrite->flush_rules();
+}
+add_action('init', 're_rewrite_rules');
+
 
 // set default twig templates directory
 Timber::$dirname = array( 'templates' );
@@ -83,6 +76,19 @@ class StarterSite extends TimberSite {
 
 	public function register_post_types() {
 		//this is where you can register custom post types
+		register_post_type( 'event',
+			array(
+				'labels' => array(
+					'name' 				=> __( 'Wydarzenia' ),
+					'singular_name' 	=> __( 'Wydarzenie' )
+				),
+				'public'				=> true,
+				'has_archive' 			=> true,
+				'rewrite' 			 	=> array('slug' => 'wydarzenia', 'with_front' => true),
+				'menu_position'       	=> 4,
+				'supports'	            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields' )
+			)
+		);
 	}
 
 	public function register_taxonomies() {

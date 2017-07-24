@@ -10,27 +10,34 @@
  * @package viva-cuba-dance-studio
  */
 
-$templates = array( 'archive.twig', 'index.twig' );
 
-$context = Timber::get_context();
-
-$context['title'] = 'Archive';
-if ( is_day() ) {
-	$context['title'] = 'Archive: '.get_the_date( 'D M Y' );
-} else if ( is_month() ) {
-	$context['title'] = 'Archive: '.get_the_date( 'M Y' );
-} else if ( is_year() ) {
-	$context['title'] = 'Archive: '.get_the_date( 'Y' );
-} else if ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
-} else if ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
-	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
-} else if ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
-	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
+ global $paged;
+if (!isset($paged) || !$paged){
+	$paged = 1;
 }
+$context = Timber::get_context();
+$args = array(
+	'post_type' => 'event',
+	'posts_per_page' => 8,
+	'paged' => $paged
+);
+/* THIS LINE IS CRUCIAL */
+/* in order for WordPress to know what to paginate */
+/* your args have to be the defualt query */
+	query_posts($args);
+/* make sure you've got query_posts in your .php file */
+
 
 $context['posts'] = Timber::get_posts();
+$templates = array( 'index.twig' );
+$context['preview_size'] = 80;
+$context['pagination'] = Timber::get_pagination();
+
+$context['footer_column_1'] = get_field('footer_column_1', 'options');
+$context['footer_column_1_phone'] = get_field('footer_column_1_phone', 'options');
+$context['footer_column_1_email'] = get_field('footer_column_1_email', 'options');
+$context['footer_column_2_text'] = get_field('footer_column_2_text', 'options');
+$context['footer_column_2_social_media'] = get_field('footer_column_2_social_media', 'options');
+$context['footer_column_3'] = get_field('footer_column_3', 'options');
 
 Timber::render( $templates, $context );
