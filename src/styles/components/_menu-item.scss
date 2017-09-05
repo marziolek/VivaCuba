@@ -1,5 +1,13 @@
 .menu-item {
-  & + & {
-    margin-left: 1em;
+  &-has-children {
+    position: relative;
+
+    &:hover {
+      @include bp-medium {
+        .dropdown-menu {
+          display: block;
+        }
+      }
+    }
   }
 }

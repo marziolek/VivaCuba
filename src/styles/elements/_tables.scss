@@ -8,4 +8,22 @@
 
 table {
   width: 100%; /* [1] */
+
+  span {
+    font-family: inherit !important;
+  }
+}
+
+[align="center"] {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table,
+tr {
+  border: none;
+}
+
+td {
+  border: 4px solid #ddd;
 }

@@ -6,6 +6,6 @@
  */
 class ChiselPost extends TimberPost {
 	public function display_image($url) {
-		var_dump($url);
+		// var_dump($url);
 	}
 }

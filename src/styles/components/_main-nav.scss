@@ -3,8 +3,28 @@
    ========================================================================== */
 
 .main-nav {
-  margin-top: 45px;
-  padding-left: 150px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  padding-top: $global-spacing;
+  background-color: $color-white;
+  transition: 0.15s all ease-in-out;
+
+  @include bp-medium {
+    position: static;
+    margin-top: 45px;
+    padding-top: 0;
+    padding-left: 150px;
+
+    .scrolled & {
+      margin-top: 24px;
+    }
+
+    &.collapse {
+      display: block;
+    }
+  }
 
   a {
     font-weight: bold;
@@ -14,8 +34,47 @@
       background-color: $color-red
     }
   }
+
+  &_toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 24px;
+    transform: translateY(-50%);
+
+    &:focus {
+      outline: none;
+    }
+
+    @include bp-medium {
+      display: none;
+    }
+  }
 }
 
-.nav-pills .nav-link.active, .nav-pills .nav-item.show .nav-link {
+.nav-pills .nav-link.active,
+.nav-pills .nav-item.show>.nav-link {
   background-color: $color-red
+}
+
+.nav-pills .nav-item .dropdown-menu {
+  .nav-link {
+    border-radius: 0;
+    background-color: $color-white;
+    color: $color-dark-grey;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-medium-grey;
+    }
+  }
+  .current-menu-item .nav-link {
+    background-color: $color-red;
+    color: $color-white;
+  }
+  .dropdown-item {
+    .nav-link:hover {
+      background-color: #eee;
+    }
+  }
 }

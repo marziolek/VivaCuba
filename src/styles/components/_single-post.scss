@@ -1,0 +1,10 @@
+.single-post,
+.single-event {
+  main {
+    margin-top: 3em;
+  }
+  &--thumbnail {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+}

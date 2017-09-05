@@ -71,9 +71,12 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
+    "isotope-layout": "^3.0.4",
     "jquery": "^3.1.1",
+    "jquery-bridget": "^2.0.1",
     "normalize-scss": "^6.0.0",
-    "owl.carousel": "^2.2.0"
+    "owl.carousel": "^2.2.0",
+    "tether": "^1.4.0"
   },
   "pre-commit": [
     "lint"

@@ -10,8 +10,7 @@
  * @package viva-cuba-dance-studio
  */
 
-
- global $paged;
+global $paged;
 if (!isset($paged) || !$paged){
 	$paged = 1;
 }

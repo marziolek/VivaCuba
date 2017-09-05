@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" prefix="og: http://ogp.me/ns#">
+<html class="no-js" lang="pl" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="{{site.charset}}" />
     <title>
@@ -10,6 +10,7 @@
       {% endif %}
     </title>
     <link rel="stylesheet" property="stylesheet" href="{{ revisionedPath('styles/main.css') }}" type="text/css">
+    <link href="{{ assetPath('images/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>document.querySelector('html').classList.remove('no-js');</script>
     <link rel="pingback" href="{{site.pingback_url}}" />
@@ -18,7 +19,7 @@
     {% endblock %}
   </head>
 
-  <body class="{{body_class}}">
+  <body class="{{body_class}}{{ body_class_extra }}">
     {% block header %}
       {% include 'components/header.twig' %}
     {% endblock %}

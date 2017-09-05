@@ -18,6 +18,8 @@
  */
 
 $context = Timber::get_context();
+$context['body_class_extra'] = ' page-' . $post->post_name;
+
 $context['slider'] = get_field('slider', 'options');
 $context['footer_column_1'] = get_field('footer_column_1', 'options');
 $context['footer_column_1_phone'] = get_field('footer_column_1_phone', 'options');

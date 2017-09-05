@@ -1,0 +1,5 @@
+.container {
+  @include bp-xlarge {
+    width: 1020px;
+  }
+}

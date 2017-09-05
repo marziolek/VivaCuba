@@ -447,11 +447,11 @@ msgstr "Akismet wychwycił ten komentarz jako będący spamem podczas automatycz
 msgid "Akismet cleared this comment during an automatic retry."
 msgstr "Akismet przepuścił ten komentarz podczas automatycznego ponownego sprawdzenia."
 
-#: class.akismet.php:1167
+#: class.akismet.php:1176
 msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
 msgstr "<a href=\"%1$s\">Zaktualizuj WordPressa</a> do najnowszej wersji lub <a href=\"%2$s\">przywróć wersję 2.4 wtyczki Akismet</a>."
 
-#: class.akismet.php:1167
+#: class.akismet.php:1176
 msgid "Akismet %s requires WordPress %s or higher."
 msgstr "Akismet %s do działania wymaga WordPressa w wersji %s lub nowszej."
 
@@ -570,14 +570,6 @@ msgstr "Administrator serwera zablokował funkcje PHP&#8217;s <code>gethostbynam
 #: views/notice.php:44
 msgid "Network functions are disabled."
 msgstr "Funkcja sieci jest wyłączona."
-
-#: views/notice.php:49
-msgid "Akismet can&#8217;t connect to your site."
-msgstr "Nie możemy połączyć się z twoją witryną."
-
-#: views/notice.php:50
-msgid "Your firewall may be blocking Akismet. Please contact your host and refer to <a href=\"%s\" target=\"_blank\">our guide about firewalls</a>."
-msgstr "Może to być spowodowane blokadą ruchu przez zaporę sieciową. Proszę skontaktować się z administratorem serwera i wysłać mu <a href=\"%s\" target=\"_blank\">nasz poradnik dotyczący zapór sieciowych</a>."
 
 #: views/notice.php:60
 msgid "Please visit your <a href=\"%s\" target=\"_blank\">Akismet account page</a> to reactivate your subscription."

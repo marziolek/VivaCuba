@@ -1,0 +1,10 @@
+.modal {
+  &-title {
+    font-size: 1.5rem;
+  }
+  &-open {
+    .header-main {
+      padding-right: 17px;
+    }
+  }
+}

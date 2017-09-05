@@ -1,0 +1,18 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+  <article id="post-{{post.ID}}">
+    <a href="/instruktorzy" class="btn btn-link">&lt;&nbsp; Wstecz</a>
+    <section class="c-post">
+      <h1 class="c-post__title">{{post.title}}</h1>
+      <div class="clearfix">
+        {% if post.thumbnail %}
+          <img src="{{ post.thumbnail }}" alt="zdjęcie dla {{ post.title }}" class="img-responsive single-post--thumbnail instructor-thumbnail">
+        {% endif %}
+        <div class="c-post__content single-post--content">
+          {{post.content}}
+        </div>
+      </div>
+    </section>
+  </article>
+{% endblock %}

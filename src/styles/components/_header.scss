@@ -4,14 +4,56 @@
 
 .header {
   &-main {
-    height: $header-height;
+    height: $header-height - 30;
     background-color: $color-white;
+    transition: 0.15s all ease-in-out;
+    @include bp-medium {
+      height: $header-height;
+    }
+    &.scrolled {
+      height: $header-height - 50;
+    }
     &_logo {
       position: absolute;
       left: $utility-spacing * 2;
       top: 0;
       border: $utility-spacing / 2 solid $color-white;
       border-radius: 50%;
+      transition: 0.15s all ease-in-out;
+      @include bp-medium {
+        top: $utility-spacing * -2.5;
+      }
+      .scrolled & {
+        top: 0;
+        border: $utility-spacing / 4 solid $color-white;
+        @include bp-medium {
+          top: -20px;
+        }
+      }
+      img {
+        width: 100px;
+        height: 100px;
+        transition: 0.15s all ease-in-out;
+        @include bp-medium {
+          width: 130px;
+          height: 130px;
+        }
+        .scrolled & {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+
+      @include bp-medium {
+        display: block;
+        height: auto;
+      }
     }
   }
 }

@@ -1,0 +1,27 @@
+{% extends "layouts/base.twig" %}
+{% set pageName = '<%= pageName %>' %}
+
+{% block content %}
+  {% if instruktorzy %}
+    <div class="isotope-filters">
+      <button data-filter="*" class="btn isotope-filter active">Wszystkie style</button>
+      {% for style in instruktorzy_style %}
+        <button data-filter=".{{ style|replace({' ':'-'}) }}" class="btn isotope-filter">{{ style }}</button>
+      {% endfor %}
+    </div>
+    <div class="isotope">
+      {% for instruktor in instruktorzy %}
+        <div class="isotope-item {% for style in instruktor.style %}{{ style|replace({' ':'-'}) }} {% endfor %}">
+          <a href="{{instruktor.link}}" class="instructor">
+            <span class="instructor-thumb"{% if instruktor.thumbnail %} style="background-image: url({{ instruktor.thumbnail }})"{% endif %}></span>
+            <span class="instructor-name--wrapper">
+              <p class="instructor-name">{{ instruktor.post_title }}</p>
+            </span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}
+
+

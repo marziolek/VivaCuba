@@ -89,6 +89,21 @@ class StarterSite extends TimberSite {
 				'supports'	            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields' )
 			)
 		);
+
+		//this is where you can register custom post types
+		register_post_type( 'instructor',
+			array(
+				'labels' => array(
+					'name' 				=> __( 'Instruktorzy' ),
+					'singular_name' 	=> __( 'Instruktor' )
+				),
+				'public'				=> true,
+				'has_archive' 			=> true,
+				'rewrite' 			 	=> array('slug' => 'instruktorzy', 'with_front' => true),
+				'menu_position'       	=> 4,
+				'supports'	            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields' )
+			)
+		);
 	}
 
 	public function register_taxonomies() {

@@ -1,10 +1,23 @@
 .nav {
-  justify-content: flex-end;
+  display: block;
+
+  @include bp-medium {
+    display: flex;
+    justify-content: flex-end;
+  }
 
   &-link {
     color: $color-dark-grey;
     &:hover {
       color: $color-medium-grey;
+    }
+  }
+
+  &-item {
+    & + & {
+      @include bp-medium {
+        margin-left: 1em;
+      }
     }
   }
 }

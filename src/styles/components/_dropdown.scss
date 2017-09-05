@@ -1,0 +1,18 @@
+.dropdown {
+  &-menu {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: none;
+    z-index: 1000;
+
+    @include bp-medium {
+      position: absolute;
+      float: left;
+    }
+  }
+  &-item {
+    margin: 0;
+    padding: 0;
+  }
+}

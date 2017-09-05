@@ -1,6 +1,6 @@
 <footer class="container footer">
   <div class="row align-items-center">
-    <div class="col-xs-12 col-sm-4 footer-col">
+    <div class="col-xs-12 col-md-4 footer-col">
       {% if footer_column_1 %}
         <p>{{footer_column_1}}</p>
       {% endif %}
@@ -15,7 +15,7 @@
         </div>
       {% endif %}
     </div>
-    <div class="col-xs-12 col-sm-3 footer-col  footer-col-mid">
+    <div class="col-xs-12 col-md-3 footer-col  footer-col-mid">
       {% if footer_column_2_text %}
         <p>{{footer_column_2_text}}</p>
       {% endif %}
@@ -25,8 +25,9 @@
         {% endfor %}
       {% endif %}
     </div>
-    <div class="col-xs-12 col-sm-5 footer-col">
+    <div class="col-xs-12 col-md-5 footer-col">
       {% if footer_column_3 %}
+        <p>Akceptujemy</p>
         <div class="row align-items-center">
           {% for card in footer_column_3 %}
             <div class="col">

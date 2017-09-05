@@ -1,17 +1,22 @@
 {% if main_nav %}
-  <nav class="main-nav">
+  <button type="button" class="navbar-toggler main-nav_toggle" data-toggle="collapse" data-target="#bd-main-nav" aria-controls="bd-main-nav" aria-expanded="false" aria-label="Otwórz nawigację">
+    <span class="icon-menu"></span>
+  </button>
+  <nav id="bd-main-nav" class="navbar-collapse collapse main-nav">
     <ul class="nav nav-pills">
       {% for item in main_nav.get_items %}
         <li class="{{item.classes | join(' ')}} nav-item">
-          <a href="{{item.get_link}}" class="nav-link{% if item.current %} active{% endif %}">{{item.title}}</a>
           {% if item.get_children %}
-            <ul class="">
+            <a href="#" data-toggle="dropdown" class="nav-link{% if item.current %} active{% endif %} dropdown">{{item.title}}</a>
+            <ul class="dropdown-menu">
               {% for subitem in item.get_children %}
-                <li class="{{subitem.classes | join(' ')}}">
+                <li class="{{subitem.classes | join(' ')}} dropdown-item">
                   <a href="{{subitem.get_link}}" class="nav-link">{{subitem.title}}</a>
                 </li>
               {% endfor %}
             </ul>
+          {% else %}
+            <a href="{{item.get_link}}" class="nav-link{% if item.current %} active{% endif %}">{{item.title}}</a>
           {% endif %}
         </li>
       {% endfor %}

@@ -4,6 +4,13 @@
    ========================================================================== */
 
 .post {
+  &s {
+    & + & {
+      @media (max-width: $bp-medium - 1) {
+        margin-top: 2em;
+      }
+    }
+  }
   &-header {
     text-transform: uppercase;
     &-link {
@@ -22,7 +29,15 @@
     padding-bottom: 1em;
     border-bottom: 1px solid $color-very-light-grey;
     &--row {
-      min-height: 101px;
+      @media (min-width: $bp-medium) {
+        min-height: 141px;
+      }
+      @media (min-width: $bp-large) {
+        min-height: 121px;
+      }
+      @media (min-width: $bp-xlarge) {
+        min-height: 101px;
+      }
     }
   }
 }

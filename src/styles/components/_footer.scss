@@ -12,8 +12,14 @@
     text-align: center;
     text-transform: uppercase;
     &-mid {
-      border-left: 1px solid $color-very-light-grey;
-      border-right: 1px solid $color-very-light-grey;
+      @media (max-width: $bp-medium - 1) {
+        border-top: 1px solid $color-very-light-grey;
+        border-bottom: 1px solid $color-very-light-grey;
+      }
+      @media (min-width: $bp-medium) {
+        border-left: 1px solid $color-very-light-grey;
+        border-right: 1px solid $color-very-light-grey;
+      }
     }
   }
   &-icon {

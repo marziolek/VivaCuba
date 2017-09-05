@@ -1,0 +1,36 @@
+.btn {
+  border: none;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:active:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:hover {
+    background-color: #eee;
+    color: $color-medium-grey;
+  }
+
+  &.active {
+    background-color: $color-red;
+    color: $color-white;
+    box-shadow: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  &.inactive {
+    pointer-events: none;
+    cursor: default;
+  }
+}

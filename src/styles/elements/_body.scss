@@ -1,5 +1,9 @@
 body {
-  padding-top: $header-height;
+  padding-top: $header-height - 30;
   font-family: $font-sans-serif;
   color: $color-xdark-grey;
+
+  @include bp-medium {
+    padding-top: $header-height;
+  }
 }
