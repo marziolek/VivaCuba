@@ -1,17 +1,27 @@
 .date {
   position: relative;
+  margin-bottom: 2em;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-right: 0;
   text-align: center;
+
+  @include bp-small {
+    margin-bottom: 0;
+  }
+
   &:after {
     content: '';
     position: absolute;
     left: 15px;
-    right: 0;
+    right: 15px;
     bottom: -1em;
     height: 2px;
     background-color: $color-very-light-grey;
+
+    @include bp-small {
+      right: 0;
+    }
   }
   &-day {
     @extend h1;
