@@ -86,7 +86,7 @@ class StarterSite extends TimberSite {
 				'has_archive' 			=> true,
 				'rewrite' 			 	=> array('slug' => 'wydarzenia', 'with_front' => true),
 				'menu_position'       	=> 4,
-				'supports'	            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields' )
+				'supports'	            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes' )
 			)
 		);
 

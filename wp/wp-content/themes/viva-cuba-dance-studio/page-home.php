@@ -13,17 +13,17 @@ $context['footer_column_2_text'] = get_field('footer_column_2_text', 'options');
 $context['footer_column_2_social_media'] = get_field('footer_column_2_social_media', 'options');
 $context['footer_column_3'] = get_field('footer_column_3', 'options');
 $args = array(
-	'post_type' => 'post',
-	'numberposts' => 3,
-	'orderby' => 'date',
-	'order' => 'DESC'
+	'post_type' 	=> 'post',
+	'numberposts' 	=> 3,
+	'orderby'		=> 'date',
+	'order' 		=> 'DESC'
 );
 $context['posts'] = Timber::get_posts($args);
 $argsEvents = array(
-	'post_type' => 'event',
-	'numberposts' => 3,
-	'orderby' => 'date',
-	'order' => 'DESC'
+	'post_type' 	=> 'event',
+	'numberposts' 	=> 3,
+	'orderby'		=> 'menu_order',
+	'order'     	=> 'DESC'
 );
 $context['events'] = Timber::get_posts($argsEvents);
 $context['preview_size'] = 23;

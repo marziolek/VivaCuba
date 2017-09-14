@@ -41,6 +41,12 @@ $font-sans-serif: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-chevron-right:before {
+  content: "\e900";
+}
+.icon-chevron-left:before {
+  content: "\e901";
+}
 .icon-menu:before {
   content: "\e9bd";
 }
@@ -53,6 +59,7 @@ $font-sans-serif: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 .icon-youtube:before {
   content: "\ea9d";
 }
+
 /* Breakpoints
    ========================================================================== */
 

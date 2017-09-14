@@ -1,0 +1,21 @@
+.owl-theme .owl-nav [class*="owl-"] {
+  position: absolute;
+  top: 50%;
+  margin: 0;
+  margin-top: -32px;
+  font-size: 32px;
+  color: $color-link;
+  background: none;
+  &:hover {
+    color: $color-hover;
+    background: none;
+  }
+}
+
+.owl-prev {
+  left: -44px;
+}
+
+.owl-next {
+  right: -40px;
+}

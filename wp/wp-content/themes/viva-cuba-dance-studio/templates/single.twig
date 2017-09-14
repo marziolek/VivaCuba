@@ -5,8 +5,8 @@
     <div class="col-xs-12 col-lg-8 push-md-2">
       <article id="post-{{post.ID}}">
         <section class="c-post">
-          <h1 class="c-post__title">{{post.title}} <span class="js-greeting"></span></h1>
-          {% if post.thumbnail %}
+          <h1 class="c-post__title">{{post.title}}</h1>
+          {% if post.thumbnail and (post.post_type != 'event') %}
             <img src="{{ post.thumbnail }}" alt="zdjęcie dla {{ post.title }}" class="img-responsive single-post--thumbnail">
           {% endif %}
           <div class="c-post__content">
