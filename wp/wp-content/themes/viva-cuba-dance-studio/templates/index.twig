@@ -4,8 +4,5 @@
   {% for post in posts %}
     {% include ['components/tease-'~post.post_type~'.twig', 'components/tease.twig'] %}
   {% endfor %}
-
-  {% if pagination %}
-    {% include ['components/pagination.twig'] %}
-  {% endif %}
+  {% include ['components/pagination.twig'] %}
 {% endblock %}

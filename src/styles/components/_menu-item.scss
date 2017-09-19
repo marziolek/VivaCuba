@@ -3,7 +3,7 @@
     position: relative;
 
     &:hover {
-      @include bp-medium {
+      @include bp-large {
         .dropdown-menu {
           display: block;
         }

@@ -1,0 +1,13 @@
+.dance-style {
+  display: block;
+  a {
+    text-decoration: none;
+  }
+  &--heading {
+    font-size: 1.2rem;
+  }
+}
+
+.post-item--dance-style {
+  width: 100%;
+}

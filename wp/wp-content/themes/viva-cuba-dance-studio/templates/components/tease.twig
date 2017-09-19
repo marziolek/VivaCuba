@@ -1,14 +1,24 @@
 <article id="post-{{post.ID}}" class="post-item">
   {% block content %}
-    <div class="row post-item--row">
-      <div class="col-sm-3 date">
-        <div class="date-day">{{ post.post_date | date('j') }}</div>
-        <div class="date-month">{{ post.post_date | date('F') }}</div>
+    {% if homepage %}
+      <div class="row post-item--row">
+        <div class="col-sm-6 post-home--medium">
+          {{ post.get_field('medium') }}
+        </div>
+        <div class="col-sm-6">
+          {{ post.get_field('opis') }}
+          <div>
+            <a href="{{ post.link }}" class="alignright btn isotope-filter post-home--btn">Zobacz więcej</a>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-9">
-        <a href="{{ post.link }}" class="h3 post-header post-header-link">{{post.title}}</a>
-        <p class="post-preview">{{ post.get_preview(preview_size, false, 'Zobacz więcej') }}</p>
+    {% else %}
+      <div class="post-item--row">
+        <div class="col-sm-12">
+          <a href="{{ post.link }}" class="h3 post-header post-header-link">{{post.title}}</a>
+          <p class="post-preview">{{ post.preview.length(40).read_more('Zobacz więcej') }}</p>
+        </div>
       </div>
-    </div>
+    {% endif %}
   {% endblock %}
 </article>

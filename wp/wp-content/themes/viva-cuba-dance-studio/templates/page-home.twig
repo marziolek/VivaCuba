@@ -2,21 +2,11 @@
 
 {% block content %}
 <div class="row u-margin-top--2">
-  <section class="col-xs-12 col-md-6 posts">
-    <div class="text-center">
-      <a href="{{ function('get_post_type_archive_link', 'post') }}" class="h1">Aktualności</a>
-    </div>
+  <section class="col-sm-12 posts">
     {% for post in posts %}
       {% include ['components/tease.twig'] %}
     {% endfor %}
-  </section>
-  <section class="col-xs-12 col-md-6 posts">
-    <div class="text-center">
-      <a href="{{ function('get_post_type_archive_link', 'event') }}" class="h1">Wydarzenia</a>
-    </div>
-    {% for post in events %}
-      {% include ['components/tease-event.twig'] %}
-    {% endfor %}
+    {% include ['components/pagination.twig'] %}
   </section>
 </div>
 {% endblock %}

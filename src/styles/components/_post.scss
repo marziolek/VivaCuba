@@ -5,6 +5,8 @@
 
 .post {
   &s {
+    width: 100%;
+
     & + & {
       @media (max-width: $bp-medium - 1) {
         margin-top: 2em;

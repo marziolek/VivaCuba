@@ -12,6 +12,10 @@
   transition: 0.15s all ease-in-out;
 
   @include bp-medium {
+    margin-top: 100px;
+  }
+
+  @include bp-large {
     position: static;
     margin-top: 45px;
     padding-top: 0;
@@ -47,8 +51,26 @@
     }
 
     @include bp-medium {
+      top: 30px;
+    }
+
+    @include bp-large {
       display: none;
     }
+  }
+}
+
+.desktop-only {
+  display: none;
+  @include bp-medium() {
+    display: block;
+  }
+}
+
+.mobile-only {
+  display: block;
+  @include bp-medium() {
+    display: none;
   }
 }
 

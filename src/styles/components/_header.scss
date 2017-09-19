@@ -8,7 +8,11 @@
     background-color: $color-white;
     transition: 0.15s all ease-in-out;
     @include bp-medium {
+      padding-top: 30px;
+    }
+    @include bp-large {
       height: $header-height;
+      padding: 0;
     }
     &.scrolled {
       height: $header-height - 50;

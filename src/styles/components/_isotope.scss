@@ -36,7 +36,9 @@
     color: #666;
 
     &:hover {
-      background-color: $color-very-light-grey;
+      @include bp-medium {
+        background-color: $color-very-light-grey;
+      }
     }
 
     &s {

@@ -2,7 +2,7 @@
 
 {% block content %}
   <a href="{{ post.link }}" class="h3 post-header post-header-link">{{post.title}}</a>
-  <p class="post-preview">{{ post.get_preview(preview_size, false, 'Zobacz więcej') }}</p>
+  <p class="post-preview">{{ post.preview.length(40).read_more('Zobacz więcej') }}</p>
   {% if post.thumbnail.src %}
     <img src="{{post.thumbnail.src}}">
   {% endif %}

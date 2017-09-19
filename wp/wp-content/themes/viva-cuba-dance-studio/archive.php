@@ -16,21 +16,15 @@ if (!isset($paged) || !$paged){
 }
 $context = Timber::get_context();
 $args = array(
-	'post_type' => 'event',
-	'posts_per_page' => 8,
-	'paged' => $paged
+	'post_type' 		=> 'event',
+	'posts_per_page' 	=> 8,
+	'orderby'			=> 'menu_order',
+	'order'     		=> 'DESC',
+	'paged'				=> $paged
 );
-/* THIS LINE IS CRUCIAL */
-/* in order for WordPress to know what to paginate */
-/* your args have to be the defualt query */
-	query_posts($args);
-/* make sure you've got query_posts in your .php file */
-
-
-$context['posts'] = Timber::get_posts();
+$context['posts'] = new Timber\PostQuery($args);
 $templates = array( 'index.twig' );
 $context['preview_size'] = 80;
-$context['pagination'] = Timber::get_pagination();
 
 $context['footer_column_1'] = get_field('footer_column_1', 'options');
 $context['footer_column_1_phone'] = get_field('footer_column_1_phone', 'options');

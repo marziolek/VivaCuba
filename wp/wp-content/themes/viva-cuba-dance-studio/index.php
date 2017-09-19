@@ -8,6 +8,10 @@
  *
  * @package viva-cuba-dance-studio
  */
+global $paged;
+if (!isset($paged) || !$paged){
+	$paged = 1;
+}
 
 if ( ! class_exists( 'Timber' ) ) {
 	echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
@@ -15,28 +19,14 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 
-
-global $paged;
-if (!isset($paged) || !$paged){
-	$paged = 1;
-}
-$context = Timber::get_context();
 $args = array(
 	'post_type' => 'post',
 	'posts_per_page' => 8,
 	'paged' => $paged
 );
-/* THIS LINE IS CRUCIAL */
-/* in order for WordPress to know what to paginate */
-/* your args have to be the defualt query */
-	query_posts($args);
-/* make sure you've got query_posts in your .php file */
-
-
-$context['posts'] = Timber::get_posts();
+$context['posts'] = new Timber\PostQuery($args);
 $templates = array( 'index.twig' );
 $context['preview_size'] = 80;
-$context['pagination'] = Timber::get_pagination();
 
 $context['footer_column_1'] = get_field('footer_column_1', 'options');
 $context['footer_column_1_phone'] = get_field('footer_column_1_phone', 'options');

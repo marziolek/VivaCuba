@@ -1,0 +1,8 @@
+<article id="post-{{child.ID}}" class="post-item post-item--dance-style {{ child.post_title|replace({' ':'-'}) }}">
+  {% block content %}
+    <div class="dance-style">
+      <p class="dance-style--heading"><b>{{ child.title }}</b></p>
+      {{ child.content }}
+    </div>
+  {% endblock %}
+</article>

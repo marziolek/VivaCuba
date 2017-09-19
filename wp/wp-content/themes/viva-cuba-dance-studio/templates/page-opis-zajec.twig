@@ -1,0 +1,17 @@
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+  <article id="post-{{post.ID}}">
+    <div class="isotope-filters">
+      <button data-filter="*" class="btn isotope-filter active">Wszystkie style</button>
+      {% for child in post.children %}
+        <button data-filter=".{{ child.post_title|replace({' ':'-'}) }}" class="btn isotope-filter">{{ child.post_title }}</button>
+      {% endfor %}
+    </div>
+    <div class="isotope">
+      {% for child in post.children %}
+        {% include ['components/tease-dance-style.twig'] %}
+      {% endfor %}
+    </div>
+  </article>
+{% endblock %}

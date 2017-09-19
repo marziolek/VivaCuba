@@ -1,0 +1,16 @@
+.post-home {
+  &--medium {
+    * {
+      margin: 0 !important;
+      width: 100%;
+      height: auto;
+    }
+  }
+  &--btn {
+    text-decoration: none;
+    &:hover {
+      background-color: $color-red;
+      color: white;
+    }
+  }
+}

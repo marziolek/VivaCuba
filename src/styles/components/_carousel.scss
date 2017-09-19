@@ -19,3 +19,10 @@
 .owl-next {
   right: -40px;
 }
+
+.owl-nav {
+  display: none;
+  @include bp-medium {
+    display: block;
+  }
+}

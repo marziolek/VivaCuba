@@ -1,25 +1,25 @@
 <nav aria-label="Nawigacja po stronach" class="pagination-wrapper">
   <ul class="pagination justify-content-center">
-    {% if pagination.prev %}
+    {% if posts.pagination.prev %}
       <li class="page-item">
-        <a href="{{pagination.prev.link}}" class="page-link {{pagination.prev.link|length ? '' : 'invisible'}}" aria-label="Poprzednia">
+        <a href="{{posts.pagination.prev.link}}" class="page-link {{posts.pagination.prev.link|length ? '' : 'invisible'}}" aria-label="Poprzednia">
           <span aria-hidden="true">&laquo;</span>
           <span class="sr-only">Poprzednia</span>
         </a>
       </li>
     {% endif %}
-    {% for page in pagination.pages %}
+    {% for page in posts.pagination.pages %}
       <li class="page-item {% if page.current %}active{% endif %}">
         {% if page.link %}
-          <a href="{{page.link}}" class="page-link{{page.class}}">{{page.title}}</a>
+          <a href="{{page.link}}" class="page-link {{page.class}}">{{page.title}}</a>
         {% else %}
-          <span class="{{page.class}}">{{page.title}}</span>
+          <span class="page-link {{page.class}}">{{page.title}}</span>
         {% endif %}
       </li>
     {% endfor %}
-    {% if pagination.next %}
+    {% if posts.pagination.next %}
       <li class="page-item">
-        <a href="{{pagination.next.link}}" class="page-link {{pagination.next.link|length ? '' : 'invisible'}}" aria-label="Następna">
+        <a href="{{posts.pagination.next.link}}" class="page-link {{posts.pagination.next.link|length ? '' : 'invisible'}}" aria-label="Następna">
           <span aria-hidden="true">&raquo;</span>
           <span class="sr-only">Następna</span>
         </a>
